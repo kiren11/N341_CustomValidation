@@ -1,0 +1,135 @@
+<!doctype html>
+
+<!-- Filename: customvalidation.html
+ Written by: Kiren Kaur
+ Purpose: To create a working form with custom validation
+ Date: 4/24/18
+ Modification History:
+04/13/18 - Original build, form Prototype
+04/16/18	- Pulling through, added data scraping
+04/20/18	- Simple form validation Added
+04/23/18	- Custom validation added
+-->
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Best Beans</title>
+
+	  <!-- Raleway font -->
+	 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	 <!-- validation plugin -->
+	 <link rel="stylesheet" type="text/css" href="customvalidation.css">
+
+	 <!-- jquery ui libaries -->
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	 <script src="https://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+	 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	 <!-- js file -->
+	 <script src="customvalidation.js"></script>
+</head>
+
+<body>
+	<h1 style = "text-align: center;">Best Beans</h1>
+
+  	<!-- coffee types tabs -->
+		<div id="tabs">
+			<ul>
+        <li><a href="#tabs-1"> Espresso </a></li>
+        <li><a href="#tabs-2"> Americano </a></li>
+        <li><a href="#tabs-3"> Macchiato </a></li>
+        <li><a href="#tabs-4"> Cappucino </a></li>
+        <li><a href="#tabs-5"> Frappaccino </a></li>
+        <li><a href="#tabs-6"> Mocha </a></li>
+        <li><a href="#tabs-7"> Latte </a></li>
+			</ul>
+			<div id="tabs-1">Strong black coffee made by forcing steam through ground coffee beans. </div>
+			<div id="tabs-2">A drink of espresso diluted with hot water</div>
+			<div id="tabs-3">Espresso with a dash of frothy steamed milk</div>
+			<div id="tabs-4">Coffee made with milk that has been frothed up with pressurized steam</div>
+			<div id="tabs-5">Blended iced beverage usually topped with whipped cream</div>
+      <div id="tabs-6">High quality type of coffee made from a specific coffee bean</div>
+      <div id="tabs-7"> A type of coffee made with espresso and hot steamed milk, milkier than a cappuccino </div>
+		</div>
+
+    <br />
+    <br />
+
+  <form id="flintstoneForm">
+      <fieldset>
+          <legend>Order your coffee today!</legend>
+
+           <!-- username -->
+				   <label for=username><strong>Username</strong></label>
+				   <input type="text" id="username" name="userName" placeholder="Type your username here" required autofocus><br><br>
+
+           <!-- password -->
+  				 <label for=password><strong>Password</strong></label>
+				   <input type="password" id="password" name="password" placeholder="Type a password"><br><br>
+
+           <!-- check if pass is the same -->
+				   <label for=confPassword><strong>Confirm Password</strong></label>
+				   <input type="password" id="confPassword" name="confirmPassword" placeholder="Type the password again."><br><br>
+
+           <!-- phone number -->
+           <label for="telephone"><strong>Phone</strong></label>
+				   <input type="tel" id="telephone" name="phone" placeholder="(123) 456-7890"><br><br>
+
+           <!-- email id -->
+				   <label for="email"><strong>Email</strong></label>
+				   <input type="email" id="email" name="email" placeholder="bestbeans@bean.com"><br><br>
+
+           <!-- coffee type -->
+           <label for="coffeeOrder"><strong>What coffee would you like from our selection?</strong></label>
+				   <input name="coffeeOrder" id="coffeeOrder"><br><br>
+
+           <!-- coffee delivery date -->
+				   <label for="deliveryDate"><strong>Delivery Date?</strong></label>
+				   <input type="text" id="datepicker"><br><br>
+
+           <!-- coffee size -->
+				   <label for="size"><strong>What size would you like?</strong></label><br>
+				   <input id="size" name="size" type="radio" value="Small" checked>Small<br>
+				   <input name="size" type="radio" value="Medium">Medium<br>
+				   <input name="size" type="radio" value="Large">Large<br>
+				   <input name="size" type="radio" value="Extra-Large">Extra-Large<br><br>
+
+           <!-- optional extra toppings -->
+				   <label for="extraToppings"><strong>Any extra toppings?</strong></label><br>
+				   <input name="toppings" type="checkbox" value="Whipped Cream">Whipped Cream<br>
+				   <input name="toppings" type="checkbox" value="Chocolate Syrup">Chocolate Syrup<br>
+           <input name="toppings" type="checkbox" value="Caramel Syrup">Caramel Syrup <br>
+				   <input name="toppings" type="checkbox" value="Marshmallows">Marshmallows<br>
+           <input name="toppings" type="checkbox" value="Chocolate Chip">Chocolate Chips<br>
+				   <input name="toppings" type="checkbox" value="Java Chips">Java Chips<br>
+					 <input name="toppings" type="checkbox" value="No toppings">No Toppings<br> <br />
+
+           <!-- shots of espresso -->
+           <label for="espressoShots"><strong>Shots of espresso?</strong></label><br>
+           <input id="espressoShots" name="espressoShots"><br><br>
+
+           <!-- distane of store away from home -->
+           <label for="range"><strong>Select a range to find a coffee shop near you:</strong> </label>
+           <input type="text" id="range" name="miles" readonly>
+           <div id="slider-range"></div><br>
+
+           <!-- any extra details to add to order -->
+           <label for="details"><strong>Any details you would like to add to your order?</strong></label><br>
+           <input id="details" name="character" placeholder="Make it lukewarm" ><br><br>
+
+           <!-- submit button -->
+           <input type="submit" id="submitButton">
+
+           <!-- clear all fields -->
+				   <input type="reset" id = "reset">
+			</fieldset>
+		</form>
+
+        <!-- where output will be displayed -->
+        <p id="outputBox"> <br>Order Confirmation:</p>
+      </body>
+</html>
